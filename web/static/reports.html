@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DDoS Protection for Cloud - Reports</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: #000000;
+      color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+    }
+    h1, h2 {
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+    section {
+      margin-top: 24px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    .sidebar {
+      background-color: #0A0A0A;
+      height: 100vh;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 20px;
+      border-right: 1px solid #333;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar li {
+      padding: 15px 20px;
+      color: #CCCCCC;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .sidebar li:hover {
+      background-color: #1a1a1a;
+    }
+    .sidebar li.active {
+      background-color: #1a1a1a;
+      color: #FFFFFF;
+      font-weight: bold;
+    }
+    .sidebar li i {
+      margin-right: 10px;
+      color: #48bb78;
+    }
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+    .card {
+      background-color: #111;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      margin-bottom: 24px;
+    }
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+    .text-red-500 { color: #f56565; font-weight: bold; }
+    .text-yellow-500 { color: #ecc94b; font-weight: bold; }
+    .text-green-500 { color: #48bb78; font-weight: bold; }
+    .filter-bar input, .filter-bar button {
+      background-color: #0A0A0A;
+      color: #FFFFFF;
+      border: 1px solid #333;
+      border-radius: 5px;
+      padding: 8px 12px;
+      margin-right: 10px;
+    }
+    .filter-bar button {
+      background-color: #48bb78;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+    .filter-bar button:hover {
+      background-color: #3a9b61;
+    }
+    .metric-card {
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 10px;
+      transition: transform 0.2s ease-in-out;
+    }
+    .metric-card:hover {
+      transform: scale(1.01);
+    }
+    footer {
+      background-color: #0A0A0A;
+      color: #CCCCCC;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+      border-top: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="text-center py-4">
+      <h1 class="text-2xl font-bold text-white">DDoS Protection</h1>
+    </div>
+    <ul>
+      <li><i class="fas fa-tachometer-alt"></i> Dashboard</li>
+      <li><i class="fas fa-file-alt"></i> Logs</li>
+      <li class="active"><i class="fas fa-chart-bar"></i> Reports</li>
+      <li><i class="fas fa-cog"></i> Settings</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <div class="container py-10">
+      <header class="flex justify-between items-center border-b border-gray-700 pb-6 mb-10">
+        <h1 class="text-4xl font-bold">DDoS Protection Reports</h1>
+        <button id="logout-btn" class="bg-[#E61919] hover:bg-[#B71C1C] text-white font-bold py-2 px-8 rounded shadow-lg">Logout</button>
+      </header>
+
+      <!-- Report Metrics -->
+      <section>
+        <h2 class="section-title">Report Metrics</h2>
+        <div class="card">
+          <div class="filter-bar flex mb-6">
+            <input type="date" value="2025-05-01" class="w-1/6">
+            <input type="date" value="2025-05-10" class="w-1/6">
+            <button class="w-1/6">Export as CSV</button>
+            <button class="w-1/6">Export as PDF</button>
+          </div>
+          <div class="metric-card">
+            <p>Total Attacks: <span class="text-red-500">30</span></p>
+            <p>Most Common Attack Type: <span class="text-red-500">SYN Flood</span> (15 occurrences)</p>
+          </div>
+          <div class="metric-card">
+            <p>Successful Mitigations: <span class="text-green-500">25</span></p>
+            <p>Ongoing Mitigations: <span class="text-yellow-500">3</span></p>
+          </div>
+          <div class="metric-card">
+            <p>Blocked IPs: <span class="text-green-500">50</span></p>
+            <p>Average Attack Duration: <span class="text-yellow-500">5 minutes</span></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <p>© 2025 DDoS Protection for Cloud. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

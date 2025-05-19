@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Intrualert</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
+  <style>
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+      color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .signup-container {
+      background-color: #111;
+      border-radius: 12px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      border: 1px solid #333;
+    }
+    .title-header {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #FFFFFF;
+      text-align: center;
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+    .title-header span {
+      color: #f56565;
+    }
+    .form-input {
+      background-color: #0A0A0A;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      color: #FFFFFF;
+      font-size: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .form-input:focus {
+      border-color: #48bb78;
+      box-shadow: 0 0 0 2px rgba(72, 187, 120, 0.3);
+      outline: none;
+    }
+    .form-input::placeholder {
+      color: #999999;
+    }
+    .checkbox-label {
+      color: #CCCCCC;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .checkbox-input {
+      appearance: none;
+      width: 1rem;
+      height: 1rem;
+      border: 1px solid #333;
+      border-radius: 4px;
+      background-color: #0A0A0A;
+      cursor: pointer;
+    }
+    .checkbox-input:checked {
+      background-color: #48bb78;
+      border-color: #48bb78;
+      position: relative;
+    }
+    .checkbox-input:checked::after {
+      content: '\2713';
+      color: #FFFFFF;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.8rem;
+    }
+    .button {
+      background-color: #f56565;
+      color: #FFFFFF;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .button:hover {
+      background-color: #B71C1C;
+      transform: translateY(-2px);
+    }
+    .link {
+      color: #48bb78;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: text-decoration 0.3s ease;
+    }
+    .link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-space-grotesk">
+  <div class="signup-container p-10 rounded-lg shadow-lg">
+    <h2 class="title-header">Intr<span>u</span>alert</h2>
+    <form id="signupForm" class="flex flex-col gap-4 max-w-md">
+      <div>
+        <label for="username" class="block text-sm font-medium text-gray-300 mb-1">Username</label>
+        <input id="username" type="text" placeholder="Enter username" class="form-input rounded-xl h-14 p-4 w-full" required />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+        <input id="email" type="email" placeholder="Enter email" class="form-input rounded-xl h-14 p-4 w-full" required />
+      </div>
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-300 mb-1">Password</label>
+        <input id="password" type="password" placeholder="Enter password" class="form-input rounded-xl h-14 p-4 w-full" required />
+      </div>
+      <div>
+        <label for="confirm-password" class="block text-sm font-medium text-gray-300 mb-1">Confirm Password</label>
+        <input id="confirm-password" type="password" placeholder="Confirm password" class="form-input rounded-xl h-14 p-4 w-full" required />
+      </div>
+      <div class="flex items-center mt-2">
+        <input id="terms" type="checkbox" class="checkbox-input" required />
+        <label for="terms" class="checkbox-label"> I agree to the <a href="#" class="text-[#48bb78] hover:underline">terms and conditions</a></label>
+      </div>
+      <button type="submit" class="button rounded-xl h-12 px-5 text-base font-bold mt-4">Create Account</button>
+      <p class="text-center mt-4">
+        <span class="text-gray-400 text-sm">Already have an account? </span>
+        <a href="#" class="link">Log in</a>
+      </p>
+    </form>
+  </div>
+</body>
+</html>

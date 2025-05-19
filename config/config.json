@@ -1,0 +1,25 @@
+{
+  "interfaces": ["\\Device\\NPF_{EEA7D8DE-AA83-47E0-AD2B-7769C77B662E}"],
+  "port": 8080,
+  "syn_flood_threshold": 1000,
+  "udp_flood_threshold": 1000,
+  "icmp_flood_threshold": 500,
+  "http_flood_threshold": 500,
+  "signature_file": "config/signatures.json",
+  "region": "us-east-1",
+  "mitigation_enabled": true,
+  "storage_enabled": true,
+  "dynamodb_attack_table": "Attacks",
+  "dynamodb_user_table": "Users",
+  "dynamodb_traffic_table": "TrafficStats",
+  "session_secret": "RIitbl2CWLJMTZcYFG5qsfyD8Pgam0jE3z7Xo6O9wp4udHNKAnSUQk1rVehvxB",
+  "waf": {
+    "ip_set_name": "DDoSIPSet-Test",
+    "ip_set_id": "4985bf3c-c6ae-4380-bc73-03c95f19fe39",
+    "scope": "REGIONAL",
+    "arn": "arn:aws:wafv2:us-east-1:820797296509:regional/ipset/DDoSIPSet-Test/4985bf3c-c6ae-4380-bc73-03c95f19fe39",
+    "web_acl_name": "DDoS-Protection-WebACL",
+    "web_acl_id": "d056103f-27b9-42a9-89fd-065d2b706e14",
+    "web_acl_arn": "arn:aws:wafv2:us-east-1:820797296509:regional/webacl/DDoS-Protection-WebACL/d056103f-27b9-42a9-89fd-065d2b706e14"
+  }
+}

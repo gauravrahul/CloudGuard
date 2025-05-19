@@ -1,0 +1,48 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:PutItem",
+                "dynamodb:GetItem",
+                "dynamodb:Query",
+                "dynamodb:Scan",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:DescribeTable",
+                "dynamodb:CreateTable",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem"
+            ],
+            "Resource": [
+                "arn:aws:dynamodb:us-east-1:820797296509:table/AttackLogs",
+                "arn:aws:dynamodb:us-east-1:820797296509:table/TrafficStats",
+                "arn:aws:dynamodb:us-east-1:820797296509:table/Users",
+                "arn:aws:dynamodb:us-east-1:820797296509:table/Settings"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "wafv2:GetIPSet",
+                "wafv2:UpdateIPSet",
+                "wafv2:ListIPSets",
+                "wafv2:GetWebACL",
+                "wafv2:UpdateWebACL",
+                "wafv2:CreateIPSet",
+                "wafv2:CreateWebACL",
+                "wafv2:DeleteIPSet",
+                "wafv2:AssociateWebACL",
+                "wafv2:DisassociateWebACL",
+                "wafv2:GetRuleGroup",
+                "wafv2:ListResourcesForWebACL"
+            ],
+            "Resource": [
+                "arn:aws:wafv2:us-east-1:820797296509:regional/ipset/DDoSIPSet-Test/4985bf3c-c6ae-4380-bc73-03c95f19fe39",
+                "arn:aws:wafv2:us-east-1:820797296509:regional/ipset/*",
+                "arn:aws:wafv2:us-east-1:820797296509:regional/webacl/DDoS-Protection-WebACL/*",
+                "arn:aws:wafv2:us-east-1:820797296509:regional/rulegroup/*"
+            ]
+        }
+    ]
+}

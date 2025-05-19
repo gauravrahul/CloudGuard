@@ -1,0 +1,86 @@
+[
+    {
+        "id": "nids-001",
+        "type": "nids",
+        "description": "SYN Attack",
+        "pattern": ".*SYN.*",
+        "severity": "Medium",
+        "protocol": "TCP"
+    },
+    {
+        "id": "nids-002",
+        "type": "nids",
+        "description": "SQL Injection Attempt",
+        "pattern": "(?:\\bunion\\b.*\\bselect\\b|\\bselect\\b.*\\bfrom\\b|\\binsert\\b.*\\binto\\b)",
+        "severity": "High",
+        "protocol": "HTTP"
+    },
+    {
+        "id": "nids-003",
+        "type": "nids",
+        "description": "XSS Attempt",
+        "pattern": "(?:<script>|javascript:|onerror=|onload=)",
+        "severity": "High",
+        "protocol": "HTTP"
+    },
+    {
+        "id": "nids-004",
+        "type": "nids",
+        "description": "UDP/DNS Amplification",
+        "pattern": ".*\\x00\\x01\\x00\\x00\\x00\\x00\\x00.*",
+        "severity": "High",
+        "protocol": "UDP"
+    },
+    {
+        "id": "ddos-001",
+        "type": "ddos",
+        "description": "SYN Flood",
+        "pattern": "SYN flag set, no ACK",
+        "severity": "High",
+        "protocol": "TCP"
+    },
+    {
+        "id": "ddos-002",
+        "type": "ddos",
+        "description": "UDP Flood",
+        "pattern": "High packet rate, small payload",
+        "severity": "High",
+        "protocol": "UDP"
+    },
+    {
+        "id": "ddos-003",
+        "type": "ddos",
+        "description": "ICMP Flood",
+        "pattern": "Excessive ping requests",
+        "severity": "High",
+        "protocol": "ICMP"
+    },
+    {
+        "id": "ddos-004",
+        "type": "ddos",
+        "description": "HTTP Flood",
+        "pattern": "Excessive GET/POST requests, rapid succession",
+        "severity": "High",
+        "protocol": "HTTP"
+    },
+    {
+        "id": "http-tracker",
+        "type": "http",
+        "description": "Suspicious Tracker Request",
+        "pattern": "/hybridaction/zybTrackerStatisticsAction",
+        "severity": "Medium",
+        "protocol": "HTTP",
+        "threshold": 1,
+        "window": 10
+    },
+    {
+        "id": "sql-injection",
+        "type": "http",
+        "protocol": "HTTP",
+        "pattern": "union\\s+select",
+        "description": "SQL Injection Attempt",
+        "severity": "High",
+        "threshold": 1,
+        "window": 10
+    }
+]

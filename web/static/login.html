@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Intrualert</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-container {
+            background-color: #111;
+            border-radius: 12px;
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid #333;
+        }
+        .title-header {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-align: center;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+        .title-header span {
+            color: #f56565;
+        }
+        .form-input {
+            background-color: #0A0A0A;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            color: #FFFFFF;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-input:focus {
+            border-color: #48bb78;
+            box-shadow: 0 0 0 2px rgba(72, 187, 120, 0.3);
+            outline: none;
+        }
+        .form-input::placeholder {
+            color: #999999;
+        }
+        .error {
+            color: #f56565;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .button {
+            background-color: #f56565;
+            color: #FFFFFF;
+            font-weight: bold;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .button:hover {
+            background-color: #B71C1C;
+            transform: translateY(-2px);
+        }
+        .link {
+            color: #48bb78;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: text-decoration 0.3s ease;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        .link-secondary {
+            color: #CCCCCC;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .link-secondary:hover {
+            color: #999999;
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-space-grotesk">
+    <div class="login-container p-10 rounded-lg shadow-lg">
+        <h2 class="title-header">Intr<span>u</span>alert</h2>
+        <form id="loginForm" class="flex flex-col gap-4 max-w-md">
+            <div id="error" class="error mb-4" style="display: none; color: #f56565; text-align: center;"></div>
+            <input id="username" name="username" type="text" placeholder="Username" 
+                   class="form-input rounded-xl h-14 p-4" required />
+            <input id="password" name="password" type="password" placeholder="Password" 
+                   class="form-input rounded-xl h-14 p-4" required />
+            <div class="flex justify-between items-center mt-2">
+                <a href="/static/forgotten-password.html" class="link-secondary">Forgot password?</a>
+                <a href="/static/signup.html" class="link">Sign up</a>
+            </div>
+            <button type="submit" class="button rounded-xl h-12 px-5 text-base font-bold">Log in</button>
+        </form>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
